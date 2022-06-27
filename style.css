@@ -11,22 +11,28 @@
 }
 
 .player {
-    margin-left: 5vw;
-    margin-top: 65vh;
+    top: 379px;
+    left: 50px;
     position: absolute;
     width: 100px;
-    height: 15vh;
+    height: 150px;
     background-color: blue;
+    transition: all 100ms;
+}
+
+.playerJump {
+    top: 200px;
 }
 
 .enemy {
-    margin-left: 80vw;
-    position: absolute;
-    margin-top: 65vh;
+    top: 430px;
+    left: 1300px;
     width: 100px;
     height: 100px;
+    position: absolute;
     clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
     background-color: red;
+    animation: moveLeft 2s ease-out infinite;
 }
 
 .ground {
@@ -54,7 +60,16 @@
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.8);
 }
 
-.playerJump {
-    margin-top: 40vh;
-}
+/* .playerDown {
+    margin-top: 65vh;
+} */
 
+@keyframes moveLeft {
+    0% {
+        left: 1300px;
+    }
+
+    100% {
+        left: -100px;
+    }
+}
